@@ -18,7 +18,7 @@ Die Syntax von CSS ist normalerweise:
 
 selected-html-tag
 then open brackets
-then the css style for the selected tag (each property like margin-top got after it two dots : then the value then dot + comma ;
+then the css style for the selected tag (each property like margin-top got after it two dots : then the value then dot + comma ;)
 then closed brackets
 
 . für Klassen
