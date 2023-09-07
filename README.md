@@ -8,6 +8,8 @@ Im inspektor kann man wenn man auf ein HTML element clickt auswählen "In der Ko
 
 Emmet ist ein in VSCode eingebautes Tool, welches redundate Code Snippets mit abkürzungen erstellen kann
 
+react ist eine library bzw "Framework" für js
+
 Live Server ist eine Extension, welche einen "Server" simuliert auf dem man live die veränderungen der Website durch die manipulierung der HTML, CSS und JS files sehen kann
 
 Prettier ist eine Extension, welche Code automatisch normiert (einrückungen , wo sich klammern befinden etc)
