@@ -1,0 +1,89 @@
+<html>
+
+<head>
+    <style>
+        .menu-dropdown {
+            width: 10rem;
+            height: 1.8rem;
+            font-size: 1.5rem;
+            background-color: aqua;
+            color: black;
+            border: 2px solid yellow;
+            border-radius: 10px;
+            padding: 2px 5px;
+            text-align: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .dropdown-list {
+            display: none;
+            z-index: 10;
+            background-color: green;
+            color: pink;
+            font-size: 1.2rem;
+            width: 10.5rem;
+            border-radius: 10px;
+            margin-top: 0rem;
+            cursor: pointer;
+        }
+
+        .dropdown-list p {
+            padding: 3px 10px;
+        }
+
+        .dropdown-list p:hover {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>
+        Using the <i> div and p tag </i> to create a dropdown list in JavaScript.
+    </h2>
+    <h3>Choose any value from below dropdown list.</h3>
+    <div id="output">The selected value is none</div>
+    <br>
+    <!-- whenever we select the value, it will invoke the selectOption() function -->
+    <div class="menu-dropdown" onclick="openDropdown()">
+        Choose Value
+    </div>
+    <div class="dropdown-list" id="list">
+        <p>First option</p>
+        <p>Second option</p>
+        <p>Third option</p>
+        <p>Fourth option</p>
+        <p>Fifth option</p>
+        <p>Sixth option</p>
+        <p>Seventh option</p>
+    </div>
+    <script>
+        let output = document.getElementById('output');
+        let dropdownList = document.getElementById("list");
+        dropdownList.style.display = "none";
+        function openDropdown() {
+            if (dropdownList.style.display != "none") {
+                dropdownList.style.display = "none";
+            } else {
+                dropdownList.style.display = "block";
+            }
+        }
+        const p_elements = document.getElementsByTagName("p");
+        // access all p elements
+        const totalP = p_elements.length;
+        // iterate through all <p> elements
+        for (let i = 0; i < totalP; i++) {
+            const option = p_elements[i];
+            // add event listner to <p> element
+            option.addEventListener("click", () => {
+                // When a user clicks on any p element, get its innerHTML
+                output.innerHTML = "The selected option is " + option.innerHTML;
+                // close the dropdown list once users select an option
+                dropdownList.style.display = "none";
+            })
+        }
+    </script>
+</body>
+
+</html>
