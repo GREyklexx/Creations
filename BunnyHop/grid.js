@@ -1,52 +1,26 @@
-var bunny = document.querySelector("#bunny");
 var root = document.querySelector("#root");
-var gridColumns = 7; 
-var Positionx = 0; 
-var Positiony = 0;
-var gridRow = 7;
-var l2r = true;
+var gridColumns = 7;
+var x = 0;
+var y = 0;
+var gridRow = 8;
+var left2right = true;
 function hop() {
-    if (l2r == true) {
-        if (Positionx == 7) {
-            Positiony = (Positiony + 1);
-            bunny.style.gridRow = Positiony + 1;
-            bunny.style.gridColumn = 7;
-            l2r = !l2r
-            console.log("position X"+Positionx+"Position Y" +Positiony+"   1")
-
+    if (left2right) {
+        if (x == 6) {
+            y = (y + 1) % gridRow;
+            left2right = !left2right;
+        } else {
+            x = (x + 1) % gridColumns;
         }
-        
-        else {
-            Positionx = (Positionx + 1);
-            bunny.style.gridColumn = Positionx + 1;
-            bunny.style.gridRow = Positiony;
-            console.log("position X"+Positionx+"Position Y"+Positiony+"    2")
-
+    } else {
+        if (x == 0) {
+            y = (y + 1) % gridRow;
+            left2right = !left2right;
+        } else {
+            x = (x - 1) % gridColumns;
         }
     }
-
-
-    
-
-    else {
-        
-        if (Positionx == 0) {
-            Positiony = (Positiony + 1);;
-            bunny.style.gridRow = Positiony + 1;
-            bunny.style.gridColumn = 0;
-            l2r = !l2r
-            console.log("position X"+Positionx+ "Position Y" +Positiony+"    3")
-
-        }
-    
-        else {
-            Positionx = (Positionx - 1);
-            bunny.style.gridColumn = Positionx - 1;
-            bunny.style.gridRow = Positiony;
-            console.log("position X"+Positionx + "Position Y" + Positiony+"       4")
-        }
-    }
+    bunny.style.gridColumn = x + 1;
+    bunny.style.gridRow = y + 1;
 }
-
-
-var hopInterval = setInterval(hop, 1000); 
+var hopInterval = setInterval(hop, 1000);
