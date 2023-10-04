@@ -1,18 +1,44 @@
 var bunny = document.querySelector("#bunny");
 var root = document.querySelector("#root");
 var gridColumns = 7; 
-var currentPosition = 0; 
+var Positionx = 0; 
+var Positiony = 0;
 var gridRow = 7;
+var l2r = true;
 function hop() {
-    
-    currentPosition = (currentPosition + 1) % gridColumns;
-    
+    if (l2r == true){
+        if (Positionx==6) {Positiony = (Positiony + 1) % gridRow;;
+            bunny.style.gridRow = Positiony + 1;
+            bunny.style.gridColumn = Positionx;
+            l2r=!l2r
 
-    bunny.style.gridColumn = currentPosition + 1; 
-    if (currentPosition == gridColumns) {
+        }
         
+        else {Positionx = (Positionx + 1) % gridColumns;
+            bunny.style.gridColumn = Positionx + 1;
+            bunny.style.gridRow = Positiony;
+
+
+        }
+    }
+
+
+    
+    else {
+        
+        if (Positionx==0) {Positiony = (Positiony + 1) % gridRow;;
+        bunny.style.gridRow = Positiony + 1;
+        bunny.style.gridColumn = Positionx;
+        l2r=!l2r
 
     }
+    
+        else {Positionx = (Positionx - 1) % gridColumns;
+            bunny.style.gridColumn = Positionx - 1;
+            bunny.style.gridRow = Positiony;
+        }
+    }
+
 }
 
 
