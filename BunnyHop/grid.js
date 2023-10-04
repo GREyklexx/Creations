@@ -12,7 +12,7 @@ function hop() {
             bunny.style.gridRow = Positiony + 1;
             bunny.style.gridColumn = 7;
             l2r = !l2r
-            console.log(Positionx+"the" +Positiony+"1")
+            console.log("position X"+Positionx+"Position Y" +Positiony+"   1")
 
         }
         
@@ -20,13 +20,14 @@ function hop() {
             Positionx = (Positionx + 1);
             bunny.style.gridColumn = Positionx + 1;
             bunny.style.gridRow = Positiony;
-            console.log(Positionx+"the" +Positiony+"2")
+            console.log("position X"+Positionx+"Position Y"+Positiony+"    2")
 
         }
     }
 
 
     
+
     else {
         
         if (Positionx == 0) {
@@ -34,7 +35,7 @@ function hop() {
             bunny.style.gridRow = Positiony + 1;
             bunny.style.gridColumn = 0;
             l2r = !l2r
-            console.log(Positionx+"the" +Positiony+"3")
+            console.log("position X"+Positionx+ "Position Y" +Positiony+"    3")
 
         }
     
@@ -42,7 +43,7 @@ function hop() {
             Positionx = (Positionx - 1);
             bunny.style.gridColumn = Positionx - 1;
             bunny.style.gridRow = Positiony;
-            console.log(Positionx + "the" + Positiony+"4")
+            console.log("position X"+Positionx + "Position Y" + Positiony+"       4")
         }
     }
 }
