@@ -7,14 +7,14 @@ var gridRow = 7;
 var l2r = true;
 function hop() {
     if (l2r == true){
-        if (Positionx==6) {Positiony = (Positiony + 1) % gridRow;;
+        if (Positionx==7) {Positiony = (Positiony + 1);
             bunny.style.gridRow = Positiony + 1;
             bunny.style.gridColumn = Positionx;
             l2r=!l2r
 
         }
         
-        else {Positionx = (Positionx + 1) % gridColumns;
+        else {Positionx = (Positionx + 1);
             bunny.style.gridColumn = Positionx + 1;
             bunny.style.gridRow = Positiony;
 
@@ -26,14 +26,14 @@ function hop() {
     
     else {
         
-        if (Positionx==0) {Positiony = (Positiony + 1) % gridRow;;
+        if (Positionx==0) {Positiony = (Positiony + 1);;
         bunny.style.gridRow = Positiony + 1;
         bunny.style.gridColumn = Positionx;
         l2r=!l2r
 
     }
     
-        else {Positionx = (Positionx - 1) % gridColumns;
+        else {Positionx = (Positionx - 1);
             bunny.style.gridColumn = Positionx - 1;
             bunny.style.gridRow = Positiony;
         }
@@ -42,4 +42,4 @@ function hop() {
 }
 
 
-var hopInterval = setInterval(hop, 1000); 
+var hopInterval = setInterval(hop, 100    ); 
